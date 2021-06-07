@@ -1,6 +1,6 @@
 import scrapy
 from scrapy import item
-
+from Crawler.matching import *
 
 class MacbookCellphonesSpider(scrapy.Spider):
     name = 'macbook_CellphoneS'
@@ -59,4 +59,4 @@ class MacbookCellphonesSpider(scrapy.Spider):
         item['url'] = url
         item['website'] = self.allowed_domains[0]
 
-        yield item
+        yield convert(item)
